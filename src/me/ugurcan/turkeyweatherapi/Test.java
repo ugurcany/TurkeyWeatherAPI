@@ -10,6 +10,7 @@ public class Test {
 		
 		// list cities of Turkey
 		ArrayList<String> cities = turkeyWeather.listCities();
+		System.out.println("Cities of Turkey");
 		for (String city : cities)
 			System.out.println( city );
 		
