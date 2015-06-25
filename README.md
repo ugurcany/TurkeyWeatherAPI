@@ -1,8 +1,8 @@
 ## TurkeyWeatherAPI - Weather API for the cities of Turkey
 
-Data source: http://www.mgm.gov.tr/
+*Data source: http://www.mgm.gov.tr/*
 
-How to use:
+**How to use:**
 ```java
 TurkeyWeatherAPI turkeyWeather = new TurkeyWeatherAPI();
 
@@ -34,7 +34,7 @@ System.out.println("Sunrise: " + city.sunrise() );
 System.out.println("Sunset: " + city.sunset() );
 ```
 
-Output:
+**Output:**
 ```
 Cities of Turkey
 ADANA
