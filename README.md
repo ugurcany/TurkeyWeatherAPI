@@ -1,4 +1,6 @@
-## TurkeyWeatherAPI - Weather API for the cities of Turkey in Java
+## TurkeyWeatherAPI - Weather API for the cities of Turkey
+
+Data source: http://www.mgm.gov.tr/
 
 How to use:
 ```java
