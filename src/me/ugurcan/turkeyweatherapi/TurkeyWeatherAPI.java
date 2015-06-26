@@ -44,7 +44,7 @@ public class TurkeyWeatherAPI {
 		
 	}
 	
-	public City city(String inputCity){
+	public City getCity(String inputCity){
 		
 		City city = new City();
 			

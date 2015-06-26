@@ -21,7 +21,7 @@ public class Test {
 		// input should be one of the cities listed by the code above
 		// (in the same format as listed, no Turkish char allowed)
 		String inputCity = "ANKARA";
-		City city = turkeyWeather.city(inputCity);
+		City city = turkeyWeather.getCity(inputCity);
 		
 		System.out.println("City: " + inputCity);
 		System.out.println("Weather-now: " + city.getWeatherNow() );
