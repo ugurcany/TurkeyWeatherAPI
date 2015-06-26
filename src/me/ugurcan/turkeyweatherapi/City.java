@@ -38,7 +38,7 @@ public class City {
 	}
 
 	// weather-now
-	public String weatherNow(){
+	public String getWeatherNow(){
 		return weatherNow;
 	}
 
@@ -47,7 +47,7 @@ public class City {
 	}
 
 	// humidity-now
-	public String humidityNow() {
+	public String getHumidityNow() {
 		return humidityNow;
 	}
 
@@ -56,7 +56,7 @@ public class City {
 	}
 	
 	// pressure-now
-	public String pressureNow() {
+	public String getPressureNow() {
 		return pressureNow;
 	}
 
@@ -65,7 +65,7 @@ public class City {
 	}
 	
 	// visibility-now
-	public String visibilityNow() {
+	public String getVisibilityNow() {
 		return visibilityNow;
 	}
 
@@ -74,7 +74,7 @@ public class City {
 	}
 	
 	// weather-today-high
-	public String weatherTodayHigh() {
+	public String getWeatherTodayHigh() {
 		return weatherTodayHigh;
 	}
 
@@ -83,7 +83,7 @@ public class City {
 	}
 
 	// weather-today-low
-	public String weatherTodayLow() {
+	public String getWeatherTodayLow() {
 		return weatherTodayLow;
 	}
 
@@ -92,7 +92,7 @@ public class City {
 	}
 	
 	// weather-tomorrow-high
-	public String weatherTomorrowHigh() {
+	public String getWeatherTomorrowHigh() {
 		return weatherTomorrowHigh;
 	}
 
@@ -101,7 +101,7 @@ public class City {
 	}
 
 	// weather-tomorrow-low
-	public String weatherTomorrowLow() {
+	public String getWeatherTomorrowLow() {
 		return weatherTomorrowLow;
 	}
 
@@ -110,34 +110,34 @@ public class City {
 	}
 	
 	// elevation
-	public String elevation() {
+	public String getElevation() {
 		return elevation;
 	}
 
-	public void setElevation(String elevation) {
+	protected void setElevation(String elevation) {
 		this.elevation = elevation;
 	}
 	
 	// latitude
-	public String latitude() {
+	public String getLatitude() {
 		return latitude;
 	}
 
-	public void setLatitude(String latitude) {
+	protected void setLatitude(String latitude) {
 		this.latitude = latitude;
 	}
 
 	// longitude
-	public String longitude() {
+	public String getLongitude() {
 		return longitude;
 	}
 
-	public void setLongitude(String longitude) {
+	protected void setLongitude(String longitude) {
 		this.longitude = longitude;
 	}
 
 	// sunrise
-	public String sunrise() {
+	public String getSunrise() {
 		return sunrise;
 	}
 
@@ -146,7 +146,7 @@ public class City {
 	}
 
 	// sunset
-	public String sunset() {
+	public String getSunset() {
 		return sunset;
 	}
 

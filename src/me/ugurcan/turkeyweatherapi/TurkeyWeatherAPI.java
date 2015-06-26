@@ -44,13 +44,13 @@ public class TurkeyWeatherAPI {
 		
 	}
 	
-	public City city(String input){
+	public City city(String inputCity){
 		
 		City city = new City();
 			
 		try{
 			
-			Document doc = Jsoup.connect("http://www.mgm.gov.tr/tahmin/il-ve-ilceler.aspx?m=" + input).get();
+			Document doc = Jsoup.connect("http://www.mgm.gov.tr/tahmin/il-ve-ilceler.aspx?m=" + inputCity).get();
 			
 			// weather-now
 			Element element = doc.getElementById("divSonDurum").select("tr").get(1);
