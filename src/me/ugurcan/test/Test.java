@@ -19,7 +19,7 @@ public class Test {
 		
 		// input should be one of the cities listed by the code above
 		// (in the same format as listed, no Turkish char allowed)
-		String inputCity = cities.get(0);
+		String inputCity = cities.get(5);
 		City city = turkeyWeather.city(inputCity);
 		
 		System.out.println("City: " + inputCity);
@@ -33,6 +33,9 @@ public class Test {
 		System.out.println("Weather-tomorrow-high: " + city.weatherTomorrowHigh() );
 		System.out.println("Weather-tomorrow-low: " + city.weatherTomorrowLow() );
 		
+		System.out.println("Elevation: " + city.elevation() );
+		System.out.println("Latitude: " + city.latitude() );
+		System.out.println("Longitude: " + city.longitude() );
 		System.out.println("Sunrise: " + city.sunrise() );
 		System.out.println("Sunset: " + city.sunset() );
 

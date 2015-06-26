@@ -12,6 +12,9 @@ public class City {
 	private String weatherTomorrowHigh;
 	private String weatherTomorrowLow;
 	
+	private String elevation;
+	private String latitude;
+	private String longitude;
 	private String sunrise;
 	private String sunset;
 
@@ -26,6 +29,9 @@ public class City {
 		this.weatherTomorrowHigh = "N/A";
 		this.weatherTomorrowLow = "N/A";
 		
+		this.elevation = "N/A";
+		this.latitude = "N/A";
+		this.longitude = "N/A";
 		this.sunrise = "N/A";
 		this.sunset = "N/A";
 		
@@ -101,6 +107,33 @@ public class City {
 
 	protected void setWeatherTomorrowLow(String weatherTomorrowLow) {
 		this.weatherTomorrowLow = weatherTomorrowLow;
+	}
+	
+	// elevation
+	public String elevation() {
+		return elevation;
+	}
+
+	public void setElevation(String elevation) {
+		this.elevation = elevation;
+	}
+	
+	// latitude
+	public String latitude() {
+		return latitude;
+	}
+
+	public void setLatitude(String latitude) {
+		this.latitude = latitude;
+	}
+
+	// longitude
+	public String longitude() {
+		return longitude;
+	}
+
+	public void setLongitude(String longitude) {
+		this.longitude = longitude;
 	}
 
 	// sunrise

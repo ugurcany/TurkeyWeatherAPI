@@ -86,6 +86,21 @@ public class TurkeyWeatherAPI {
 			String weatherTomorrowLow = element.text() + "\u00B0" + "C";
 			city.setWeatherTomorrowLow(weatherTomorrowLow);
 			
+			// elevation
+			element = doc.getElementById("cp_sayfa_pMerkezYuksekligi");
+			String elevation = element.text().substring(element.text().indexOf(" ") + 2);
+			city.setElevation(elevation);
+			
+			// latitude
+			element = doc.getElementById("cp_sayfa_pMerkezEnlem");
+			String latitude = element.text().substring(element.text().indexOf(" ") + 2);
+			city.setLatitude(latitude);
+			
+			// longitude
+			element = doc.getElementById("cp_sayfa_pMerkezBoylam");
+			String longitude = element.text().substring(element.text().indexOf(" ") + 2);
+			city.setLongitude(longitude);
+			
 			// sunrise
 			element = doc.getElementById("cp_sayfa_pMerkezGD");
 			String sunrise = element.text().substring(element.text().lastIndexOf(" ") + 2);
