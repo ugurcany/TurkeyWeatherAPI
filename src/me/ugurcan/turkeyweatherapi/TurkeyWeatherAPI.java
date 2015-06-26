@@ -66,25 +66,19 @@ public class TurkeyWeatherAPI {
 			String visibilityNow = element.select("td").get(5).text();
 			city.setVisibilityNow(visibilityNow);
 			
-			// weather-today-high
-			element = doc.getElementById("cp_sayfa_thmMax1");
-			String weatherTodayHigh = element.text() + "\u00B0" + "C";
-			city.setWeatherTodayHigh(weatherTodayHigh);
-			
-			// weather-today-low
-			element = doc.getElementById("cp_sayfa_thmMin1");
-			String weatherTodayLow = element.text() + "\u00B0" + "C";
-			city.setWeatherTodayLow(weatherTodayLow);
-			
-			// weather-tomorrow-high
-			element = doc.getElementById("cp_sayfa_thmMax2");
-			String weatherTomorrowHigh = element.text() + "\u00B0" + "C";
-			city.setWeatherTomorrowHigh(weatherTomorrowHigh);
-			
-			// weather-tomorrow-low
-			element = doc.getElementById("cp_sayfa_thmMin2");
-			String weatherTomorrowLow = element.text() + "\u00B0" + "C";
-			city.setWeatherTomorrowLow(weatherTomorrowLow);
+			// weather-next-days
+			for(int i=1; i<=5; i++){
+				element = doc.getElementById("cp_sayfa_thmGun" + i);
+				String date = element.text();
+				
+				element = doc.getElementById("cp_sayfa_thmMax" + i);
+				String maxTemp = element.text() + "\u00B0" + "C";
+				
+				element = doc.getElementById("cp_sayfa_thmMin" + i);
+				String minTemp = element.text() + "\u00B0" + "C";
+
+				city.addWeatherNextDays(new Weather(date, maxTemp, minTemp));
+			}
 			
 			// elevation
 			element = doc.getElementById("cp_sayfa_pMerkezYuksekligi");

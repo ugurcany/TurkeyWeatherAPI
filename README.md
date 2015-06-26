@@ -14,7 +14,7 @@ System.out.println();
 
 // input should be one of the cities listed by the code above
 // (in the same format as listed, no Turkish char allowed)
-String inputCity = cities.get(5);
+String inputCity = "ANKARA";
 City city = turkeyWeather.city(inputCity);
 
 System.out.println("City: " + inputCity);
@@ -23,10 +23,14 @@ System.out.println("Humidity-now: " + city.getHumidityNow() );
 System.out.println("Pressure-now: " + city.getPressureNow() );
 System.out.println("Visibility-now: " + city.getVisibilityNow() );
 
-System.out.println("Weather-today-high: " + city.getWeatherTodayHigh() );
-System.out.println("Weather-today-low: " + city.getWeatherTodayLow() );
-System.out.println("Weather-tomorrow-high: " + city.getWeatherTomorrowHigh() );
-System.out.println("Weather-tomorrow-low: " + city.getWeatherTomorrowLow() );
+System.out.println();
+
+System.out.println("Weather-next-days:");
+ArrayList<Weather> weatherNextDays = city.getWeatherNextDays();
+for (int i=0; i<weatherNextDays.size(); i++)
+	System.out.println( weatherNextDays.get(i) );
+
+System.out.println();
 
 System.out.println("Elevation: " + city.getElevation() );
 System.out.println("Latitude: " + city.getLatitude() );
@@ -39,18 +43,22 @@ System.out.println("Sunset: " + city.getSunset() );
 ```
 Cities of Turkey: [ADANA, ADIYAMAN, AFYONKARAHISAR, AGRI, AKSARAY, AMASYA, ANKARA, ANTALYA, ARDAHAN, ARTVIN, AYDIN, BALIKESIR, BARTIN, BATMAN, BAYBURT, BILECIK, BINGOL, BITLIS, BOLU, BURDUR, BURSA, CANAKKALE, CANKIRI, CORUM, DENIZLI, DIYARBAKIR, DUZCE, EDIRNE, ELAZIG, ERZINCAN, ERZURUM, ESKISEHIR, GAZIANTEP, GIRESUN, GUMUSHANE, HAKKARI, HATAY, IGDIR, ISPARTA, ISTANBUL, IZMIR, K.MARAS, KARABUK, KARAMAN, KARS, KASTAMONU, KAYSERI, KIRIKKALE, KIRKLARELI, KIRSEHIR, KILIS, KOCAELI, KONYA, KUTAHYA, MALATYA, MANISA, MARDIN, MERSIN, MUGLA, MUS, NEVSEHIR, NIGDE, ORDU, OSMANIYE, RIZE, SAKARYA, SAMSUN, SIIRT, SINOP, SIVAS, SANLIURFA, SIRNAK, TEKIRDAG, TOKAT, TRABZON, TUNCELI, USAK, VAN, YALOVA, YOZGAT, ZONGULDAK]
 
-City: AMASYA
-Weather-now: 17,5°C
-Humidity-now: %88
-Pressure-now: 1008,7 hPa
-Visibility-now: 20 km
-Weather-today-high: 27°C
-Weather-today-low: 16°C
-Weather-tomorrow-high: 28°C
-Weather-tomorrow-low: 16°C
-Elevation: 412 m.
-Latitude: 40° 39' K
-Longitude: 35° 50' D
-Sunrise: 05:07
-Sunset: 20:12
+City: ANKARA
+Weather-now: 16,7°C
+Humidity-now: %69
+Pressure-now: 1010,8 hPa
+Visibility-now: 10 km
+
+Weather-next-days:
+27 Haziran Cumartesi -> max: 24°C - min: 12°C
+28 Haziran Pazar -> max: 20°C - min: 13°C
+29 Haziran Pazartesi -> max: 23°C - min: 10°C
+30 Haziran Salý -> max: 25°C - min: 11°C
+1 Temmuz Çarþamba -> max: 26°C - min: 12°C
+
+Elevation: 879 m.
+Latitude: 39° 59' K
+Longitude: 32° 41' D
+Sunrise: 05:22
+Sunset: 20:22
 ```

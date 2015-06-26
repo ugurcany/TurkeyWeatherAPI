@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import me.ugurcan.turkeyweatherapi.City;
 import me.ugurcan.turkeyweatherapi.TurkeyWeatherAPI;
+import me.ugurcan.turkeyweatherapi.Weather;
 
 public class Test {
 
@@ -19,7 +20,7 @@ public class Test {
 		
 		// input should be one of the cities listed by the code above
 		// (in the same format as listed, no Turkish char allowed)
-		String inputCity = cities.get(5);
+		String inputCity = "ANKARA";
 		City city = turkeyWeather.city(inputCity);
 		
 		System.out.println("City: " + inputCity);
@@ -28,10 +29,14 @@ public class Test {
 		System.out.println("Pressure-now: " + city.getPressureNow() );
 		System.out.println("Visibility-now: " + city.getVisibilityNow() );
 		
-		System.out.println("Weather-today-high: " + city.getWeatherTodayHigh() );
-		System.out.println("Weather-today-low: " + city.getWeatherTodayLow() );
-		System.out.println("Weather-tomorrow-high: " + city.getWeatherTomorrowHigh() );
-		System.out.println("Weather-tomorrow-low: " + city.getWeatherTomorrowLow() );
+		System.out.println();
+		
+		System.out.println("Weather-next-days:");
+		ArrayList<Weather> weatherNextDays = city.getWeatherNextDays();
+		for (int i=0; i<weatherNextDays.size(); i++)
+			System.out.println( weatherNextDays.get(i) );
+		
+		System.out.println();
 		
 		System.out.println("Elevation: " + city.getElevation() );
 		System.out.println("Latitude: " + city.getLatitude() );

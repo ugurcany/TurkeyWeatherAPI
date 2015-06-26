@@ -1,17 +1,16 @@
 package me.ugurcan.turkeyweatherapi;
 
+import java.util.ArrayList;
+
 public class City {
 	
 	private String weatherNow;
 	private String humidityNow;
 	private String pressureNow;
 	private String visibilityNow;
-
-	private String weatherTodayHigh;
-	private String weatherTodayLow;
-	private String weatherTomorrowHigh;
-	private String weatherTomorrowLow;
 	
+	private ArrayList<Weather> weatherNextDays;
+
 	private String elevation;
 	private String latitude;
 	private String longitude;
@@ -23,11 +22,9 @@ public class City {
 		this.weatherNow = "N/A";
 		this.humidityNow = "N/A";
 		this.pressureNow = "N/A";
+		this.visibilityNow = "N/A";
 		
-		this.weatherTodayHigh = "N/A";
-		this.weatherTodayLow = "N/A";
-		this.weatherTomorrowHigh = "N/A";
-		this.weatherTomorrowLow = "N/A";
+		this.weatherNextDays = new ArrayList<Weather>();
 		
 		this.elevation = "N/A";
 		this.latitude = "N/A";
@@ -73,40 +70,17 @@ public class City {
 		this.visibilityNow = visibilityNow;
 	}
 	
-	// weather-today-high
-	public String getWeatherTodayHigh() {
-		return weatherTodayHigh;
+	// weather-next-days
+	public ArrayList<Weather> getWeatherNextDays() {
+		return weatherNextDays;
 	}
 
-	protected void setWeatherTodayHigh(String weatherTodayHigh) {
-		this.weatherTodayHigh = weatherTodayHigh;
-	}
-
-	// weather-today-low
-	public String getWeatherTodayLow() {
-		return weatherTodayLow;
-	}
-
-	protected void setWeatherTodayLow(String weatherTodayLow) {
-		this.weatherTodayLow = weatherTodayLow;
+	protected void setWeatherNextDays(ArrayList<Weather> weatherNextDays) {
+		this.weatherNextDays = weatherNextDays;
 	}
 	
-	// weather-tomorrow-high
-	public String getWeatherTomorrowHigh() {
-		return weatherTomorrowHigh;
-	}
-
-	protected void setWeatherTomorrowHigh(String weatherTomorrowHigh) {
-		this.weatherTomorrowHigh = weatherTomorrowHigh;
-	}
-
-	// weather-tomorrow-low
-	public String getWeatherTomorrowLow() {
-		return weatherTomorrowLow;
-	}
-
-	protected void setWeatherTomorrowLow(String weatherTomorrowLow) {
-		this.weatherTomorrowLow = weatherTomorrowLow;
+	protected void addWeatherNextDays(Weather weather){
+		this.weatherNextDays.add(weather);
 	}
 	
 	// elevation
