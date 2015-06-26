@@ -1,4 +1,4 @@
-## TurkeyWeatherAPI - Weather API for the cities of Turkey
+## TurkeyWeatherAPI - Weather data for the cities of Turkey
 
 *Data source: http://www.mgm.gov.tr/*
 
