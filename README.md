@@ -1,5 +1,6 @@
 ## TurkeyWeatherAPI
-###Current weather data for the cities and districts of Turkey and 5-day forecasts
+
+Current weather and 5-day forecast data for the cities and districts of Turkey
 
 *Data source: http://www.mgm.gov.tr/*
 
