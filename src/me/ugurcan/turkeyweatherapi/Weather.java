@@ -7,15 +7,21 @@ public class Weather {
 	private String minTemp;
 	private String status;
 	
+	private String maxHumidity;
+	private String minHumidity;
+	
 	private String windSpeed;
 	private String windDirection;
 
-	public Weather(String date, String maxTemp, String minTemp, String status, String windSpeed, String windDirection) {
+	public Weather(String date, String maxTemp, String minTemp, String status, String maxHumidity, String minHumidity, String windSpeed, String windDirection) {
 
 		this.date = date;
 		this.maxTemp = maxTemp;
 		this.minTemp = minTemp;
 		this.status = status;
+		
+		this.maxHumidity = maxHumidity;
+		this.minHumidity = minHumidity;
 		
 		this.windSpeed = windSpeed;
 		this.windDirection = windDirection;
@@ -58,6 +64,24 @@ public class Weather {
 		this.status = status;
 	}
 	
+	// max humidity
+	public String getMaxHumidity() {
+		return maxHumidity;
+	}
+
+	protected void setMaxHumidity(String maxHumidity) {
+		this.maxHumidity = maxHumidity;
+	}
+
+	// min humidity
+	public String getMinHumidity() {
+		return minHumidity;
+	}
+
+	protected void setMinHumidity(String minHumidity) {
+		this.minHumidity = minHumidity;
+	}
+	
 	// wind speed
 	public String getWindSpeed() {
 		return windSpeed;
@@ -81,6 +105,7 @@ public class Weather {
 	public String toString(){
 		return "<" + date + ">\n" + 
 					"temp -> " + "max: " + maxTemp + " - min: " + minTemp + " - " + status + "\n" + 
+					"humidity -> " + "max: " + maxHumidity + " - min: " + minHumidity + "\n" + 
 					"wind -> " + windDirection + " " + windSpeed;
 	}
 

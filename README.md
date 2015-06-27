@@ -67,17 +67,22 @@ wind -> Kuzeyden 10 km/sa
 Weather-next-days:
 <27 Haziran Cumartesi>
 temp -> max: 27°C - min: 18°C - ÇOK BULUTLU
+humidity -> max: %72 - min: %49
 wind -> Kuzeybatýdan 28 km/sa
 <28 Haziran Pazar>
 temp -> max: 26°C - min: 18°C - PARÇALI BULUTLU
+humidity -> max: %68 - min: %54
 wind -> Kuzeyden 25 km/sa
 <29 Haziran Pazartesi>
 temp -> max: 28°C - min: 18°C - PARÇALI BULUTLU
+humidity -> max: %77 - min: %52
 wind -> Kuzeyden 21 km/sa
 <30 Haziran Salý>
 temp -> max: 28°C - min: 19°C - AZ BULUTLU
+humidity -> max: %75 - min: %49
 wind -> Kuzeyden 18 km/sa
 <1 Temmuz Çarþamba>
 temp -> max: 28°C - min: 19°C - PARÇALI BULUTLU
+humidity -> max: %80 - min: %54
 wind -> Kuzeyden 24 km/sa
 ```

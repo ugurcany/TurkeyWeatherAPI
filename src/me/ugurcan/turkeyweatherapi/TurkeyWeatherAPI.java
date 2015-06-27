@@ -112,13 +112,19 @@ public class TurkeyWeatherAPI {
 				element = doc.getElementById("cp_sayfa_imgHadise" + i);
 				String statuss = element.attr("alt");
 				
+				element = doc.getElementById("cp_sayfa_thmNemMax" + i);
+				String maxHumidity = "%" + element.text();
+				
+				element = doc.getElementById("cp_sayfa_thmNemMin" + i);
+				String minHumidity = "%" + element.text();
+				
 				element = doc.getElementById("cp_sayfa_thmRuzgarHiz" + i);
 				String windSpeedd = element.text() + " km/sa";
 				
 				element = doc.getElementById("cp_sayfa_imgRyon" + i);
 				String windDirectionn = element.attr("alt");
 
-				location.addWeatherNextDays(new Weather(date, maxTemp, minTemp, statuss, windSpeedd, windDirectionn));
+				location.addWeatherNextDays(new Weather(date, maxTemp, minTemp, statuss, maxHumidity, minHumidity, windSpeedd, windDirectionn));
 			}
 			
 			// elevation
