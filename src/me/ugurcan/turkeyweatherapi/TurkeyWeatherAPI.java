@@ -38,7 +38,7 @@ public class TurkeyWeatherAPI {
 		}
 		
 		if(cities.isEmpty())
-			System.out.println("Error!");
+			cities.add("Error!");
 		
 		return cities;
 		
@@ -49,6 +49,10 @@ public class TurkeyWeatherAPI {
 		ArrayList<String> districts = new ArrayList<String>();
 		
 		try{
+			
+			ArrayList<String> cities = this.listCities();
+			if (!cities.contains(ofCity))
+				throw new Exception();
 			
 			Document doc = Jsoup.connect("http://www.mgm.gov.tr/tahmin/il-ve-ilceler.aspx?m=" + ofCity).get();
 			
@@ -68,7 +72,7 @@ public class TurkeyWeatherAPI {
 		}
 		
 		if(districts.isEmpty())
-			System.out.println("Error!");
+			districts.add("Error!");
 		
 		return districts;
 		
