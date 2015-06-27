@@ -54,17 +54,12 @@ public class TurkeyWeatherAPI {
 			
 			// weather-now
 			Element element = doc.getElementById("divSonDurum").select("tr").get(1);
-			String weatherNow = element.select("td").get(1).text();
-			city.setWeatherNow(weatherNow);
-			// humidity-now
-			String humidityNow = element.select("td").get(2).text();
-			city.setHumidityNow(humidityNow);
-			// pressure-now
-			String pressureNow = element.select("td").get(4).text();
-			city.setPressureNow(pressureNow);
-			// visibility-now
-			String visibilityNow = element.select("td").get(5).text();
-			city.setVisibilityNow(visibilityNow);
+			String lastUpdate = element.select("td").get(0).text();
+			String temp = element.select("td").get(1).text();
+			String humidity = element.select("td").get(2).text();
+			String pressure = element.select("td").get(4).text();
+			String visibility = element.select("td").get(5).text();
+			city.setWeatherNow(new WeatherNow(lastUpdate, temp, humidity, pressure, visibility));
 			
 			// weather-next-days
 			for(int i=1; i<=5; i++){

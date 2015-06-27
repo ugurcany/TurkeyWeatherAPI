@@ -4,10 +4,7 @@ import java.util.ArrayList;
 
 public class City {
 	
-	private String weatherNow;
-	private String humidityNow;
-	private String pressureNow;
-	private String visibilityNow;
+	private WeatherNow weatherNow;
 	
 	private ArrayList<Weather> weatherNextDays;
 
@@ -19,10 +16,7 @@ public class City {
 
 	public City(){
 		
-		this.weatherNow = "N/A";
-		this.humidityNow = "N/A";
-		this.pressureNow = "N/A";
-		this.visibilityNow = "N/A";
+		this.weatherNow = null;
 		
 		this.weatherNextDays = new ArrayList<Weather>();
 		
@@ -35,39 +29,12 @@ public class City {
 	}
 
 	// weather-now
-	public String getWeatherNow(){
+	public WeatherNow getWeatherNow() {
 		return weatherNow;
 	}
 
-	protected void setWeatherNow(String weatherNow) {
+	protected void setWeatherNow(WeatherNow weatherNow) {
 		this.weatherNow = weatherNow;
-	}
-
-	// humidity-now
-	public String getHumidityNow() {
-		return humidityNow;
-	}
-
-	protected void setHumidityNow(String humidityNow) {
-		this.humidityNow = humidityNow;
-	}
-	
-	// pressure-now
-	public String getPressureNow() {
-		return pressureNow;
-	}
-
-	protected void setPressureNow(String pressureNow) {
-		this.pressureNow = pressureNow;
-	}
-	
-	// visibility-now
-	public String getVisibilityNow() {
-		return visibilityNow;
-	}
-
-	protected void setVisibilityNow(String visibilityNow) {
-		this.visibilityNow = visibilityNow;
 	}
 	
 	// weather-next-days

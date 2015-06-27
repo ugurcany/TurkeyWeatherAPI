@@ -24,10 +24,7 @@ public class Test {
 		City city = turkeyWeather.getCity(inputCity);
 		
 		System.out.println("City: " + inputCity);
-		System.out.println("Weather-now: " + city.getWeatherNow() );
-		System.out.println("Humidity-now: " + city.getHumidityNow() );
-		System.out.println("Pressure-now: " + city.getPressureNow() );
-		System.out.println("Visibility-now: " + city.getVisibilityNow() );
+		System.out.println("Weather-now:\n" + city.getWeatherNow() );
 		
 		System.out.println();
 		

@@ -18,10 +18,7 @@ String inputCity = "ANKARA";
 City city = turkeyWeather.getCity(inputCity);
 
 System.out.println("City: " + inputCity);
-System.out.println("Weather-now: " + city.getWeatherNow() );
-System.out.println("Humidity-now: " + city.getHumidityNow() );
-System.out.println("Pressure-now: " + city.getPressureNow() );
-System.out.println("Visibility-now: " + city.getVisibilityNow() );
+System.out.println("Weather-now:\n" + city.getWeatherNow() );
 
 System.out.println();
 
@@ -44,10 +41,8 @@ System.out.println("Sunset: " + city.getSunset() );
 Cities of Turkey: [ADANA, ADIYAMAN, AFYONKARAHISAR, AGRI, AKSARAY, AMASYA, ANKARA, ANTALYA, ARDAHAN, ARTVIN, AYDIN, BALIKESIR, BARTIN, BATMAN, BAYBURT, BILECIK, BINGOL, BITLIS, BOLU, BURDUR, BURSA, CANAKKALE, CANKIRI, CORUM, DENIZLI, DIYARBAKIR, DUZCE, EDIRNE, ELAZIG, ERZINCAN, ERZURUM, ESKISEHIR, GAZIANTEP, GIRESUN, GUMUSHANE, HAKKARI, HATAY, IGDIR, ISPARTA, ISTANBUL, IZMIR, K.MARAS, KARABUK, KARAMAN, KARS, KASTAMONU, KAYSERI, KIRIKKALE, KIRKLARELI, KIRSEHIR, KILIS, KOCAELI, KONYA, KUTAHYA, MALATYA, MANISA, MARDIN, MERSIN, MUGLA, MUS, NEVSEHIR, NIGDE, ORDU, OSMANIYE, RIZE, SAKARYA, SAMSUN, SIIRT, SINOP, SIVAS, SANLIURFA, SIRNAK, TEKIRDAG, TOKAT, TRABZON, TUNCELI, USAK, VAN, YALOVA, YOZGAT, ZONGULDAK]
 
 City: ANKARA
-Weather-now: 16,7°C
-Humidity-now: %69
-Pressure-now: 1010,8 hPa
-Visibility-now: 10 km
+Weather-now:
+27 Haziran Cumartesi 02:50 -> temp: 15,1°C - humidity: %76 - pressure: 1010,8 hPa - visibility: 10 km
 
 Weather-next-days:
 27 Haziran Cumartesi -> max: 24°C - min: 12°C
