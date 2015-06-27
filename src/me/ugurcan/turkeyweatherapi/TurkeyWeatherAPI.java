@@ -44,22 +44,55 @@ public class TurkeyWeatherAPI {
 		
 	}
 	
-	public City getCity(String inputCity){
+	public ArrayList<String> listDistricts(String ofCity){
 		
-		City city = new City();
+		ArrayList<String> districts = new ArrayList<String>();
+		
+		try{
+			
+			Document doc = Jsoup.connect("http://www.mgm.gov.tr/tahmin/il-ve-ilceler.aspx?m=" + ofCity).get();
+			
+			Elements elements = doc.getElementById("divSecim520Ilce").select("li");
+			
+			for(Element element : elements){
+				int startIndex = element.toString().indexOf("m=") + 2;
+				int endIndex = element.toString().indexOf("#");
+				
+				String district = element.toString().substring(startIndex, endIndex);
+				
+				districts.add(district);
+			}
+			
+		}catch(Exception ex){
+			districts.clear();
+		}
+		
+		if(districts.isEmpty())
+			System.out.println("Error!");
+		
+		return districts;
+		
+	}
+	
+	public Location getLocation(String inputLocation){
+		
+		Location location = new Location();
 			
 		try{
 			
-			Document doc = Jsoup.connect("http://www.mgm.gov.tr/tahmin/il-ve-ilceler.aspx?m=" + inputCity).get();
+			Document doc = Jsoup.connect("http://www.mgm.gov.tr/tahmin/il-ve-ilceler.aspx?m=" + inputLocation).get();
 			
 			// weather-now
 			Element element = doc.getElementById("divSonDurum").select("tr").get(1);
 			String lastUpdate = element.select("td").get(0).text();
 			String temp = element.select("td").get(1).text();
+			String status = doc.getElementById("divSonDurum").select("tr").get(0).select("td").attr("title");
 			String humidity = element.select("td").get(2).text();
+			String windSpeed = element.select("td").get(3).text();
+			String windDirection = element.select("td").get(3).attr("title");
 			String pressure = element.select("td").get(4).text();
 			String visibility = element.select("td").get(5).text();
-			city.setWeatherNow(new WeatherNow(lastUpdate, temp, humidity, pressure, visibility));
+			location.setWeatherNow(new WeatherNow(lastUpdate, temp, status, humidity, pressure, visibility, windSpeed, windDirection));
 			
 			// weather-next-days
 			for(int i=1; i<=5; i++){
@@ -71,41 +104,50 @@ public class TurkeyWeatherAPI {
 				
 				element = doc.getElementById("cp_sayfa_thmMin" + i);
 				String minTemp = element.text() + "\u00B0" + "C";
+				
+				element = doc.getElementById("cp_sayfa_imgHadise" + i);
+				String statuss = element.attr("alt");
+				
+				element = doc.getElementById("cp_sayfa_thmRuzgarHiz" + i);
+				String windSpeedd = element.text() + " km/sa";
+				
+				element = doc.getElementById("cp_sayfa_imgRyon" + i);
+				String windDirectionn = element.attr("alt");
 
-				city.addWeatherNextDays(new Weather(date, maxTemp, minTemp));
+				location.addWeatherNextDays(new Weather(date, maxTemp, minTemp, statuss, windSpeedd, windDirectionn));
 			}
 			
 			// elevation
 			element = doc.getElementById("cp_sayfa_pMerkezYuksekligi");
 			String elevation = element.text().substring(element.text().indexOf(" ") + 2);
-			city.setElevation(elevation);
+			location.setElevation(elevation);
 			
 			// latitude
 			element = doc.getElementById("cp_sayfa_pMerkezEnlem");
 			String latitude = element.text().substring(element.text().indexOf(" ") + 2);
-			city.setLatitude(latitude);
+			location.setLatitude(latitude);
 			
 			// longitude
 			element = doc.getElementById("cp_sayfa_pMerkezBoylam");
 			String longitude = element.text().substring(element.text().indexOf(" ") + 2);
-			city.setLongitude(longitude);
+			location.setLongitude(longitude);
 			
 			// sunrise
 			element = doc.getElementById("cp_sayfa_pMerkezGD");
 			String sunrise = element.text().substring(element.text().lastIndexOf(" ") + 2);
-			city.setSunrise(sunrise);
+			location.setSunrise(sunrise);
 			
 			// sunset
 			element = doc.getElementById("cp_sayfa_pMerkezGB");
 			String sunset = element.text().substring(element.text().lastIndexOf(" ") + 2);
-			city.setSunset(sunset);
+			location.setSunset(sunset);
 			
 		}catch(Exception ex){
 			//ex.printStackTrace();
-			city = new City();
+			location = new Location();
 		}
 		
-		return city;
+		return location;
 		
 	}
 	

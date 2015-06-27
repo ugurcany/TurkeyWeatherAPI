@@ -2,7 +2,7 @@ package me.ugurcan.turkeyweatherapi;
 
 import java.util.ArrayList;
 
-public class City {
+public class Location {
 	
 	private WeatherNow weatherNow;
 	
@@ -14,7 +14,7 @@ public class City {
 	private String sunrise;
 	private String sunset;
 
-	public City(){
+	public Location(){
 		
 		this.weatherNow = null;
 		
