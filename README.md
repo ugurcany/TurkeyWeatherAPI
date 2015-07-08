@@ -2,8 +2,6 @@
 
 Current weather and 5-day forecast data for the cities and districts of Turkey
 
-*Data source: http://www.mgm.gov.tr/*
-
 **How to use:**
 ```java
 TurkeyWeatherAPI turkeyWeather = new TurkeyWeatherAPI();
@@ -53,38 +51,41 @@ Districts of IZMIR: [ALIAGA, BALCOVA, BAYINDIR, BAYRAKLI, BERGAMA, BEYDAG, BORNO
 
 Location: CESME
 Elevation: 8 m.
-Latitude: 38° 18' K
-Longitude: 26° 22' D
-Sunrise: 05:53
-Sunset: 20:42
+Latitude: 38Â° 18' K
+Longitude: 26Â° 22' D
+Sunrise: 05:58
+Sunset: 20:41
 
 Weather-now:
-<27 Haziran Cumartesi 02:19>
-temp -> 21,5°C - AÇIK
-humidity -> %72
-pressure -> 1007,1 hPa
+<8 Temmuz Ã‡arÅŸamba 19:23>
+temp -> 28,4Â°C - AÃ‡IK
+humidity -> %52
+pressure -> 1007,5 hPa
 visibility -> 20 km
-wind -> Kuzeyden 10 km/sa
+wind -> KuzeybatÄ±dan 2 km/sa
 
 Weather-next-days:
-<27 Haziran Cumartesi>
-temp -> max: 27°C - min: 18°C - ÇOK BULUTLU
-humidity -> max: %72 - min: %49
-wind -> Kuzeybatýdan 28 km/sa
-<28 Haziran Pazar>
-temp -> max: 26°C - min: 18°C - PARÇALI BULUTLU
+<9 Temmuz PerÅŸembe>
+temp -> max: 30Â°C - min: 23Â°C - SICAK
+humidity -> max: %65 - min: %54
+wind -> Kuzeyden 11 km/sa
+<10 Temmuz Cuma>
+temp -> max: 31Â°C - min: 23Â°C - SICAK
+humidity -> max: %71 - min: %51
+wind -> Kuzeyden 17 km/sa
+<11 Temmuz Cumartesi>
+temp -> max: 30Â°C - min: 24Â°C - SICAK
 humidity -> max: %68 - min: %54
 wind -> Kuzeyden 25 km/sa
-<29 Haziran Pazartesi>
-temp -> max: 28°C - min: 18°C - PARÇALI BULUTLU
-humidity -> max: %77 - min: %52
-wind -> Kuzeyden 21 km/sa
-<30 Haziran Salý>
-temp -> max: 28°C - min: 19°C - AZ BULUTLU
-humidity -> max: %75 - min: %49
-wind -> Kuzeyden 18 km/sa
-<1 Temmuz Çarþamba>
-temp -> max: 28°C - min: 19°C - PARÇALI BULUTLU
-humidity -> max: %80 - min: %54
-wind -> Kuzeyden 24 km/sa
+<12 Temmuz Pazar>
+temp -> max: 30Â°C - min: 24Â°C - SICAK
+humidity -> max: %62 - min: %42
+wind -> Kuzeyden 26 km/sa
+<13 Temmuz Pazartesi>
+temp -> max: 31Â°C - min: 23Â°C - SICAK
+humidity -> max: %57 - min: %41
+wind -> Kuzeyden 23 km/sa
 ```
+
+*Data source:*
+* *http://www.mgm.gov.tr/*
