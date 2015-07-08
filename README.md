@@ -2,7 +2,9 @@
 
 Java API for current weather and 5-day forecast data for the cities and districts of Turkey
 
-Weather data is retrieved from the website of the *Turkish State Meteorological Service*.
+*Data source:*
+
+* Weather data is retrieved from the website of the [*Turkish State Meteorological Service*](http://www.mgm.gov.tr/).
 
 **How to use:**
 ```java
@@ -88,6 +90,3 @@ temp -> max: 31°C - min: 23°C - SICAK
 humidity -> max: %57 - min: %41
 wind -> Kuzeyden 23 km/sa
 ```
-
-*Data source:*
-* *http://www.mgm.gov.tr/*
