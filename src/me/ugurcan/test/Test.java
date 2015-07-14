@@ -2,33 +2,33 @@ package me.ugurcan.test;
 
 import java.util.ArrayList;
 
-import me.ugurcan.turkeyweatherapi.Location;
-import me.ugurcan.turkeyweatherapi.TurkeyWeatherAPI;
-import me.ugurcan.turkeyweatherapi.Weather;
+import me.ugurcan.weatherinturkey.Location;
+import me.ugurcan.weatherinturkey.WeatherInTurkey;
+import me.ugurcan.weatherinturkey.Weather;
 
 public class Test {
 
     public static void main(String[] args) {
 
-        TurkeyWeatherAPI turkeyWeather = new TurkeyWeatherAPI();
+        WeatherInTurkey weatherInTurkey = new WeatherInTurkey();
 
         // list cities of Turkey
-        ArrayList<String> cities = turkeyWeather.listCities();
+        ArrayList<String> cities = weatherInTurkey.listCities();
         System.out.println("Cities of Turkey: " + cities);
 
         System.out.println();
 
         // list districts of a city
         String ofCity = "IZMIR";
-        ArrayList<String> districts = turkeyWeather.listDistricts(ofCity);
+        ArrayList<String> districts = weatherInTurkey.listDistricts(ofCity);
         System.out.println("Districts of " + ofCity + ": " + districts);
 
         System.out.println();
 
+        String inputLocation = "CESME";
+        Location location = weatherInTurkey.getLocation(inputLocation);
         // input should be one of the cities or districts listed by the code above
         // (in the same format as listed, no Turkish char allowed)
-        String inputLocation = "CESME";
-        Location location = turkeyWeather.getLocation(inputLocation);
 
         System.out.println("Location: " + inputLocation);
         System.out.println("Elevation: " + location.getElevation());

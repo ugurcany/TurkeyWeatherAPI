@@ -1,4 +1,4 @@
-package me.ugurcan.turkeyweatherapi;
+package me.ugurcan.weatherinturkey;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -7,9 +7,9 @@ import org.jsoup.select.Elements;
 
 import java.util.ArrayList;
 
-public class TurkeyWeatherAPI {
+public class WeatherInTurkey {
 
-    public TurkeyWeatherAPI() {
+    public WeatherInTurkey() {
 
 
     }

@@ -1,4 +1,4 @@
-package me.ugurcan.turkeyweatherapi;
+package me.ugurcan.weatherinturkey;
 
 import java.util.ArrayList;
 

@@ -1,6 +1,6 @@
-## TurkeyWeatherAPI
+# weather-in-turkey
 
-Java API for current weather and 5-day forecast data for the cities and districts of Turkey
+A Java library to retrieve current weather and 5-day forecast data for the cities and districts of Turkey
 
 Weather data is retrieved from the website of the [*Turkish State Meteorological Service*](http://www.mgm.gov.tr/).
 
