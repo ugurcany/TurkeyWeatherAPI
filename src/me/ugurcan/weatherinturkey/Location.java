@@ -95,4 +95,25 @@ public class Location {
         this.sunset = sunset;
     }
 
+    // print neatly
+    @Override
+    public String toString() {
+        String printOut = "";
+
+        printOut += "elevation -> " + elevation + "\n";
+        printOut += "latitude -> " + latitude + "\n";
+        printOut += "longitude -> " + longitude + "\n";
+        printOut += "sunrise -> " + sunrise + "\n";
+        printOut += "sunset -> " + sunset + "\n";
+
+        printOut += "\nWeather-now:\n" + weatherNow + "\n";
+
+        printOut += "\nWeather-next-days:\n";
+
+        for (int i = 0; i < weatherNextDays.size(); i++)
+            printOut += weatherNextDays.get(i) + "\n";
+
+        return printOut;
+    }
+
 }
