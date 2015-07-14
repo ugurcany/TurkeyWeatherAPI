@@ -5,9 +5,9 @@ import java.util.ArrayList;
 public class Location {
 
     private WeatherNow weatherNow;
-
     private ArrayList<Weather> weatherNextDays;
 
+    private String name;
     private String elevation;
     private String latitude;
     private String longitude;
@@ -17,9 +17,9 @@ public class Location {
     public Location() {
 
         this.weatherNow = null;
-
         this.weatherNextDays = new ArrayList<Weather>();
 
+        this.name = "N/A";
         this.elevation = "N/A";
         this.latitude = "N/A";
         this.longitude = "N/A";
@@ -48,6 +48,15 @@ public class Location {
 
     protected void addWeatherNextDays(Weather weather) {
         this.weatherNextDays.add(weather);
+    }
+
+    // name
+    public String getName() {
+        return name;
+    }
+
+    protected void setName(String name) {
+        this.name = name;
     }
 
     // elevation
@@ -95,23 +104,29 @@ public class Location {
         this.sunset = sunset;
     }
 
+    // print weather data
+    public void printWeather(){
+        String printOut = "";
+
+        printOut += "Weather-now:\n" + weatherNow + "\n";
+        printOut += "\nWeather-next-days:\n";
+        for (int i = 0; i < weatherNextDays.size(); i++)
+            printOut += weatherNextDays.get(i) + "\n";
+
+        System.out.println(printOut);
+    }
+
     // print neatly
     @Override
     public String toString() {
         String printOut = "";
 
+        printOut += "name -> " + name + "\n";
         printOut += "elevation -> " + elevation + "\n";
         printOut += "latitude -> " + latitude + "\n";
         printOut += "longitude -> " + longitude + "\n";
         printOut += "sunrise -> " + sunrise + "\n";
         printOut += "sunset -> " + sunset + "\n";
-
-        printOut += "\nWeather-now:\n" + weatherNow + "\n";
-
-        printOut += "\nWeather-next-days:\n";
-
-        for (int i = 0; i < weatherNextDays.size(); i++)
-            printOut += weatherNextDays.get(i) + "\n";
 
         return printOut;
     }

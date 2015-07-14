@@ -28,8 +28,8 @@ public class Test {
         // input should be one of the cities or districts listed by the code above
         // (in the same format as listed, no Turkish char allowed)
 
-        System.out.println("Location: " + inputLocation);
-        System.out.println(location);
+        System.out.println(location); // print location info
+        location.printWeather(); // print weather data
 
     }
 

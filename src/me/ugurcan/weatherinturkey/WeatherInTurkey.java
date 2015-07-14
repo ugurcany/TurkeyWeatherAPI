@@ -11,7 +11,6 @@ public class WeatherInTurkey {
 
     public WeatherInTurkey() {
 
-
     }
 
     public ArrayList<String> listCities() {
@@ -126,6 +125,10 @@ public class WeatherInTurkey {
 
                 location.addWeatherNextDays(new Weather(date, maxTemp, minTemp, statuss, maxHumidity, minHumidity, windSpeedd, windDirectionn));
             }
+
+            // name
+            String name = doc.getElementsByAttributeValueMatching("id", "sfB").select("strong").text();
+            location.setName(name);
 
             // elevation
             element = doc.getElementById("cp_sayfa_pMerkezYuksekligi");
